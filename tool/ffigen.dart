@@ -1,0 +1,15 @@
+import 'dart:io';
+
+import 'package:ffigen/ffigen.dart';
+
+void main() {
+  final packageRoot = Platform.script.resolve('../');
+  FfiGenerator(
+    // Required. Output path for the generated bindings.
+    output: Output(dartFile: packageRoot.resolve('lib/raylib.g.dart')),
+    // Optional. Where to look for header files.
+    headers: Headers(entryPoints: [packageRoot.resolve('src/raylib.h')]),
+    // Optional. What functions to generate bindings for.
+    // functions: Functions.includeSet({'add'}),
+  ).generate();
+}

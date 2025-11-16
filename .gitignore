@@ -1,0 +1,16 @@
+# https://dart.dev/guides/libraries/private-files
+# Created by `dart pub`
+.dart_tool/
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.exp
+*.def
+*.manifest
+*.rc
+*.res
+*.obj
+*.o
+*.exe
