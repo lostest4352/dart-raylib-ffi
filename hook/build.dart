@@ -7,14 +7,12 @@ void main(List<String> args) async {
     if (input.config.buildCodeAssets) {
       final packageName = input.packageName;
 
-      final assetPathInPackage = input.packageRoot.resolve(
-        'shared/libraylib.dll',
-      );
+      final assetPathInPackage = input.packageRoot.resolve('shared/raylib.dll');
 
       output.assets.code.add(
         CodeAsset(
           package: packageName,
-          name: 'raylib',
+          name: "$packageName.g.dart",
           linkMode: DynamicLoadingBundled(),
           file: assetPathInPackage,
         ),
@@ -22,21 +20,21 @@ void main(List<String> args) async {
       output.assets.code.add(
         CodeAsset(
           package: packageName,
-          name: 'opengl32',
+          name: "ogl.g.dart",
           linkMode: DynamicLoadingSystem(Uri.file('opengl32.dll')),
         ),
       );
       output.assets.code.add(
         CodeAsset(
           package: packageName,
-          name: 'gdi32',
+          name: "gdi.g.dart",
           linkMode: DynamicLoadingSystem(Uri.file('gdi32.dll')),
         ),
       );
       output.assets.code.add(
         CodeAsset(
           package: packageName,
-          name: 'winmm',
+          name: "winmm.g.dart",
           linkMode: DynamicLoadingSystem(Uri.file('winmm.dll')),
         ),
       );
