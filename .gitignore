@@ -17,3 +17,4 @@ build/
 *.o
 *.exe
 *.stackdump
+*.g.dart

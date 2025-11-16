@@ -1,5 +1,6 @@
-import 'package:app1/add.dart' as add;
+import 'package:app1/main.dart' as main_app;
 
 void main(List<String> arguments) {
-  add.answerToLife();
+  // main.answerToLife();
+  // print('Hello, World!');
 }

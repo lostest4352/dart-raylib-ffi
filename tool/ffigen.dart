@@ -6,10 +6,10 @@ void main() {
   final packageRoot = Platform.script.resolve('../');
   FfiGenerator(
     // Required. Output path for the generated bindings.
-    output: Output(dartFile: packageRoot.resolve('lib/add.g.dart')),
+    output: Output(dartFile: packageRoot.resolve('lib/raylib.g.dart')),
     // Optional. Where to look for header files.
-    headers: Headers(entryPoints: [packageRoot.resolve('src/add.h')]),
+    headers: Headers(entryPoints: [packageRoot.resolve('src/raylib.h')]),
     // Optional. What functions to generate bindings for.
-    functions: Functions.includeSet({'add'}),
+    functions: Functions.includeAll,
   ).generate();
 }
