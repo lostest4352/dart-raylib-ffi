@@ -10,6 +10,9 @@ void main() {
     // Optional. Where to look for header files.
     headers: Headers(entryPoints: [packageRoot.resolve('src/raylib.h')]),
     // Optional. What functions to generate bindings for.
-    functions: Functions.includeAll,
+    functions: Functions.includeSet({'InitWindow'}),
+    // globals: Globals.includeAll,
+    // macros: Macros.includeAll,
+    // typedefs: Typedefs.includeAll,
   ).generate();
 }
