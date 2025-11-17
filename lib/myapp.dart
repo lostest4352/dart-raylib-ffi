@@ -29,5 +29,5 @@ void loadUI() {
   }
   CloseWindow();
   // GetScreenHeight();
-  // calloc.free(ptr);
+  arena.free(ptr);
 }
