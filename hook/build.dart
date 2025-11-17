@@ -12,7 +12,7 @@ void main(List<String> args) async {
       output.assets.code.add(
         CodeAsset(
           package: packageName,
-          name: "$packageName.g.dart",
+          name: "raylib.dll",
           linkMode: DynamicLoadingBundled(),
           file: assetPathInPackage,
         ),
@@ -20,21 +20,21 @@ void main(List<String> args) async {
       output.assets.code.add(
         CodeAsset(
           package: packageName,
-          name: "ogl.g.dart",
+          name: "opengl32",
           linkMode: DynamicLoadingSystem(Uri.file('opengl32.dll')),
         ),
       );
       output.assets.code.add(
         CodeAsset(
           package: packageName,
-          name: "gdi.g.dart",
+          name: "gdi32",
           linkMode: DynamicLoadingSystem(Uri.file('gdi32.dll')),
         ),
       );
       output.assets.code.add(
         CodeAsset(
           package: packageName,
-          name: "winmm.g.dart",
+          name: "winmm32",
           linkMode: DynamicLoadingSystem(Uri.file('winmm.dll')),
         ),
       );

@@ -6,13 +6,13 @@ void main() {
   final packageRoot = Platform.script.resolve('../');
   FfiGenerator(
     // Required. Output path for the generated bindings.
-    output: Output(dartFile: packageRoot.resolve('lib/raylib.g.dart')),
+    output: Output(
+      dartFile: packageRoot.resolve('lib/raylib.g.dart'),
+      style: NativeExternalBindings(assetId: "package:main/raylib.dll"),
+    ),
     // Optional. Where to look for header files.
     headers: Headers(entryPoints: [packageRoot.resolve('src/raylib.h')]),
     // Optional. What functions to generate bindings for.
     functions: Functions.includeAll,
-    // globals: Globals.includeAll,
-    // macros: Macros.includeAll,
-    // typedefs: Typedefs.includeAll,
   ).generate();
 }
