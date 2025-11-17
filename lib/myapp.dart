@@ -4,11 +4,17 @@ import "package:ffi/ffi.dart";
 
 import "raylib.g.dart";
 
-// final ffi.Pointer<Color> myStructPtr = malloc<Color>()
-//   ..ref = createStructFn();
-
 void loadUI() {
-  final ptr = calloc<Color>();
+  // final ptr = calloc<Color>();
+
+  // using((Arena arena) {
+  //   final ptr = arena.call<Color>;
+  // });
+
+  final arena = Arena();
+
+  final ptr = arena.call<Color>();
+
   ptr.ref.r = 0;
   ptr.ref.g = 228;
   ptr.ref.b = 48;
@@ -23,4 +29,5 @@ void loadUI() {
   }
   CloseWindow();
   // GetScreenHeight();
+  // calloc.free(ptr);
 }

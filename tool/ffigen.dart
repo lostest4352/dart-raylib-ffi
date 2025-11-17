@@ -14,9 +14,9 @@ void main() {
     headers: Headers(entryPoints: [packageRoot.resolve('src/raylib.h')]),
     // Optional. What functions to generate bindings for.
     functions: Functions.includeAll,
-    macros: Macros.includeAll,
-    structs: Structs.includeAll,
-    typedefs: Typedefs.includeAll,
-    unions: Unions.includeAll,
+    // macros: Macros.includeAll,
+    // structs: Structs.includeAll,
+    // typedefs: Typedefs.includeAll,
+    // unions: Unions.includeAll,
   ).generate();
 }
