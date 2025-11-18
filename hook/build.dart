@@ -38,6 +38,27 @@ void main(List<String> args) async {
           linkMode: DynamicLoadingSystem(Uri.file('winmm.dll')),
         ),
       );
+      output.assets.code.add(
+        CodeAsset(
+          package: packageName,
+          name: "kernal32",
+          linkMode: DynamicLoadingSystem(Uri.file('kernal32.dll')),
+        ),
+      );
+      output.assets.code.add(
+        CodeAsset(
+          package: packageName,
+          name: "shell32",
+          linkMode: DynamicLoadingSystem(Uri.file('shell32.dll')),
+        ),
+      );
+      output.assets.code.add(
+        CodeAsset(
+          package: packageName,
+          name: "user32",
+          linkMode: DynamicLoadingSystem(Uri.file('user32.dll')),
+        ),
+      );
     }
   });
 }

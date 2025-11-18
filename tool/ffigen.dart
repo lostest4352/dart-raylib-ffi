@@ -11,7 +11,10 @@ void main() {
       style: NativeExternalBindings(assetId: "package:main/raylib.dll"),
     ),
     // Optional. Where to look for header files.
-    headers: Headers(entryPoints: [packageRoot.resolve('src/raylib.h')]),
+    headers: Headers(
+      entryPoints: [packageRoot.resolve('src/raylib.h')],
+      // this is wrong compilerOptions: ["/SUBSYSTEM:WINDOWS", "/ENTRY:mainCRTStartup"],
+    ),
     // Optional. What functions to generate bindings for.
     functions: Functions.includeAll,
     // macros: Macros.includeAll,

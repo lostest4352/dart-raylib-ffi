@@ -13,21 +13,34 @@ void loadUI() {
 
   final arena = Arena();
 
-  final ptr = arena.call<Color>();
+  final greenPtr = arena.call<Color>();
+  greenPtr.ref.r = 0;
+  greenPtr.ref.g = 228;
+  greenPtr.ref.b = 222;
+  greenPtr.ref.a = 255;
 
-  ptr.ref.r = 0;
-  ptr.ref.g = 228;
-  ptr.ref.b = 48;
-  ptr.ref.a = 255;
+  final darkPtr = arena.call<Color>();
+  darkPtr.ref.r = 40;
+  darkPtr.ref.g = 40;
+  darkPtr.ref.b = 40;
+  darkPtr.ref.a = 255;
+
   InitWindow(600, 400, "myapp".toNativeUtf8().cast<ffi.Char>());
   //
   while (!WindowShouldClose()) {
     BeginDrawing();
-    // ClearBackground();
-    DrawText("this app".toNativeUtf8().cast<ffi.Char>(), 80, 50, 20, ptr.ref);
+    ClearBackground(darkPtr.ref);
+    DrawText(
+      "this app".toNativeUtf8().cast<ffi.Char>(),
+      80,
+      50,
+      20,
+      greenPtr.ref,
+    );
     EndDrawing();
   }
   CloseWindow();
   // GetScreenHeight();
-  arena.free(ptr);
+  // calloc.free(greenPtr);
+  arena.releaseAll();
 }

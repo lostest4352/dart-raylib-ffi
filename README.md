@@ -1,10 +1,16 @@
 Raylib window in dart with native assets. 
+
 Useful links:
 https://pub.dev/packages/ffigen
+
 https://pub.dev/packages/code_assets
+
 https://pub.dev/packages/hooks
+
 https://pub.dev/documentation/ffigen/latest/ffigen/NativeExternalBindings-class.html
+
 https://pub.dev/documentation/ffigen/latest/ffigen/BindingStyle-class.html
+
 https://pub.dev/documentation/ffigen/latest/ffigen/Output/style.html
 
 ```
