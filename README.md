@@ -1,6 +1,7 @@
 Raylib window in dart with native assets. 
 
 Useful links:
+
 https://pub.dev/packages/ffigen
 
 https://pub.dev/packages/code_assets
@@ -24,3 +25,13 @@ https://stackoverflow.com/questions/71732761/flutter-how-to-create-an-dartffi-st
 
 Sample:
 https://dart.googlesource.com/sdk/+/refs/tags/3.8.0-142.0.dev/samples/ffi/resource_management/arena_sample.dart
+
+To see dependencies:
+```
+link /dump /exports raylib.dll >export.txt
+```
+
+To remove console after exe already made:
+```
+editbin /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup main.exe
+```
